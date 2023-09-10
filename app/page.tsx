@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+
 import { Canvas } from "@react-three/fiber";
-import { useState } from "react";
 
 import { Experience } from "../app/components/Experience";
 import { PortfolioExperience } from "../app/components/PortfolioExperience";
@@ -20,7 +21,6 @@ import {
 import { Button } from "@/components/ui/button";
 import useGlobalStore from "../hooks/useGlobalStore";
 
-import Link from "next/link";
 import Vue from "@/public/icons/Vue";
 import React from "@/public/icons/React";
 import Next from "@/public/icons/Next";
@@ -33,8 +33,7 @@ import Laravel from "@/public/icons/Laravel";
 import Three from "@/public/icons/Three.js";
 import Django from "@/public/icons/Django";
 import SpringBoot from "@/public/icons/SpringBoot";
-
-import { FaExternalLinkAlt, FaPlay, FaGithubAlt } from "react-icons/fa";
+import { FaGithubAlt, FaExternalLinkAlt, FaPlay } from "react-icons/fa";
 
 export default function Home() {
   const setPreviewLink = useGlobalStore((state) => state.setPreviewLink);
@@ -281,64 +280,10 @@ export default function Home() {
       {/* /PORTFOLIO ------------------------------------------------------------/ */}
       <div
         id="portfolio"
-        className="flex md:flex-row flex-col justify-between items-center w-full"
+        className="flex md:flex-col justify-between items-center w-full relative"
       >
-        <div className="md:w-1/12 w-full flex flex-col md:flex-row md:gap-8 z-10">
-          <div className="flex flex-col">
-            <div className="flex flex-col gap-4">
-              <div className="bg-[#303030] rounded-md shadow-2xl p-2 text-xs">
-                <Image
-                  src="/gallery/Inkspire.webp"
-                  alt="Inkspire"
-                  width={300}
-                  height={150}
-                  className="rounded-md"
-                />
-                <div className="my-1">
-                  <h3 className="font-semibold">Inkspire</h3>
-                  <p>AI tattoo generator</p>
-                </div>
-                <div className="flex w-full gap-2">
-                  <Button size="sm" className="w-1/3">
-                    <FaGithubAlt />
-                  </Button>
-                  <Button
-                    size="sm"
-                    className="w-1/3 text-xs"
-                    onClick={() => handlePreviewClick("https://inkspireai.com")}
-                  >
-                    <FaPlay />
-                  </Button>
-                  <Button size="sm" className="w-1/3">
-                    <FaExternalLinkAlt />
-                  </Button>
-                </div>
-              </div>
-              <div className="bg-[#303030] rounded-md shadow-2xl p-2">
-                <Image
-                  src="/gallery/Inkspire.webp"
-                  alt="Inkspire"
-                  width={300}
-                  height={150}
-                  className="rounded-md"
-                />
-                Inkspire
-                <p>AI tattoo designs generator</p>
-                <div className="flex w-full gap-2">
-                  <Button size="sm" className="w-1/3">{`</>`}</Button>
-                  <Button
-                    size="sm"
-                    className="w-2/3"
-                    onClick={() => handlePreviewClick("https://inkspireai.com")}
-                  >
-                    Preview
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="md:w-10/12 w-full relative">
+        {/* Canvas */}
+        <div className="md:w-full relative">
           <img src="/blob.svg" className="w-full h-full -z-10" alt="Hero" />
           <div className="absolute top-0 w-full h-full">
             <Canvas camera={{ position: [-5, 0, -15], fov: 55 }}>
@@ -346,86 +291,144 @@ export default function Home() {
             </Canvas>
           </div>
         </div>
-        <div className="md:w-1/12 w-full flex flex-col md:flex-row md:gap-8 z-10">
-          <div className="flex flex-col">
-            <div className="flex flex-col gap-4">
-              <div className="bg-[#303030] rounded-md shadow-2xl p-2">
-                <Image
-                  src="/gallery/Inkspire.webp"
-                  alt="Inkspire"
-                  width={300}
-                  height={150}
-                  className="rounded-md"
-                />
-                Inkspire
-                <p>AI tattoo designs generator</p>
-                <div className="flex w-full gap-2">
-                  <Button size="sm" className="w-1/3">{`</>`}</Button>
-                  <Button
-                    size="sm"
-                    className="w-2/3"
-                    onClick={() => handlePreviewClick("https://inkspireai.com")}
-                  >
-                    Preview
-                  </Button>
-                </div>
-              </div>
-              <div className="bg-[#303030] rounded-md shadow-2xl p-2">
-                <Image
-                  src="/gallery/Inkspire.webp"
-                  alt="Inkspire"
-                  width={300}
-                  height={150}
-                  className="rounded-md"
-                />
-                Inkspire
-                <p>AI tattoo designs generator</p>
-                <div className="flex w-full gap-2">
-                  <Button size="sm" className="w-1/3">{`</>`}</Button>
-                  <Button
-                    size="sm"
-                    className="w-2/3"
-                    onClick={() => handlePreviewClick("https://inkspireai.com")}
-                  >
-                    Preview
-                  </Button>
-                </div>
-              </div>
+
+        {/* Image container */}
+        <div className="flex gap-4 absolute bottom-10 mx-auto">
+          <div
+            className="bg-[#303030] rounded-md shadow-2xl p-2 cursor-pointer"
+            onClick={() => handlePreviewClick("https://lyonelpierce.com")}
+          >
+            <Image
+              src="/gallery/Inkspire.webp"
+              alt="Inkspire"
+              width={160}
+              height={70}
+              className="rounded-md"
+            />
+            <div className="my-2 text-sm text-center">
+              <h3 className="font-semibold">Wepception</h3>
+              <p>Personal Portfolio</p>
+            </div>
+            <div className="flex justify-around my-1">
+              <Link
+                href="https://github.com/lyonelpierce/Portfolio-React-Next"
+                target="_blank"
+              >
+                <FaGithubAlt className="hover:text-orange-600" />
+              </Link>
+            </div>
+          </div>
+          <div
+            className="bg-[#303030] rounded-md shadow-2xl p-2 cursor-pointer"
+            onClick={() => handlePreviewClick("https://inkspireai.com")}
+          >
+            <Image
+              src="/gallery/Inkspire.webp"
+              alt="Inkspire"
+              width={160}
+              height={70}
+              className="rounded-md"
+            />
+            <div className="my-2 text-sm text-center">
+              <h3 className="font-semibold">Inkspire</h3>
+              <p>AI Tattoo Generator</p>
+            </div>
+            <div className="flex justify-around my-1">
+              <Link
+                href="https://github.com/lyonelpierce/Inkspire"
+                target="_blank"
+              >
+                <FaGithubAlt className="hover:text-orange-600" />
+              </Link>
+              <Link href="https://inkspireai.com" target="_blank">
+                <FaExternalLinkAlt className="hover:text-orange-600" />
+              </Link>
+            </div>
+          </div>
+          <div
+            className="bg-[#303030] rounded-md shadow-2xl p-2 cursor-pointer"
+            onClick={() => handlePreviewClick("https://loremachine.world/")}
+          >
+            <Image
+              src="/gallery/Inkspire.webp"
+              alt="Inkspire"
+              width={160}
+              height={70}
+              className="rounded-md"
+            />
+            <div className="my-2 text-sm text-center">
+              <h3 className="font-semibold">Lore Machine</h3>
+              <p>AI Storytelling</p>
+            </div>
+            <div className="flex justify-around my-1">
+              <Link href="https://loremachine.world/" target="_blank">
+                <FaExternalLinkAlt className="hover:text-orange-600" />
+              </Link>
+            </div>
+          </div>
+          <div
+            className="bg-[#303030] rounded-md shadow-2xl p-2 cursor-pointer"
+            onClick={() =>
+              handlePreviewClick("https://pawsome.up.railway.app/")
+            }
+          >
+            <Image
+              src="/gallery/Inkspire.webp"
+              alt="Inkspire"
+              width={160}
+              height={70}
+              className="rounded-md"
+            />
+            <div className="my-2 text-sm text-center">
+              <h3 className="font-semibold">Pawsome</h3>
+              <p>Pet Adoption Center</p>
+            </div>
+            <div className="flex justify-around my-1">
+              <Link
+                href="https://github.com/lyonelpierce/PetAdoptionCenter"
+                target="_blank"
+              >
+                <FaGithubAlt className="hover:text-orange-600" />
+              </Link>
+              <Link href="https://pawsome.up.railway.app/" target="_blank">
+                <FaExternalLinkAlt className="hover:text-orange-600" />
+              </Link>
+            </div>
+          </div>
+          <div
+            className="bg-[#303030] rounded-md shadow-2xl p-2 cursor-pointer"
+            onClick={() =>
+              handlePreviewClick("https://ring-customizer.up.railway.app/")
+            }
+          >
+            <Image
+              src="/gallery/Inkspire.webp"
+              alt="Inkspire"
+              width={160}
+              height={70}
+              className="rounded-md"
+            />
+            <div className="my-2 text-sm text-center">
+              <h3 className="font-semibold">Jewelry</h3>
+              <p>3D Ring Configurator</p>
+            </div>
+            <div className="flex justify-around my-1">
+              <Link
+                href="https://github.com/lyonelpierce/Ring-Customizer"
+                target="_blank"
+              >
+                <FaGithubAlt className="hover:text-orange-600" />
+              </Link>
+              <Link
+                href="https://ring-customizer.up.railway.app/"
+                target="_blank"
+              >
+                <FaExternalLinkAlt className="hover:text-orange-600" />
+              </Link>
             </div>
           </div>
         </div>
       </div>
-
-      {/* /PORTFOLIO ------------------------------------------------------------/ */}
-      {/* <div className="w-full h-[56rem]">
-        <h2>See My Works Which Will Amaze You!</h2>
-        <Canvas camera={{ position: [-5, 0, -15], fov: 55 }}>
-          <PortfolioExperience />
-        </Canvas>
-        <ul className="flex gap-4 justify-around absolute z-10">
-          <li className="bg-[#303030] rounded-md shadow-2xl p-2">
-            <Image
-              src="/gallery/Inkspire.webp"
-              alt="Inkspire"
-              width={300}
-              height={150}
-              className="rounded-md"
-            />
-            Inkspire
-            <p>AI tattoo designs generator</p>
-            <div className="flex w-full gap-2">
-              <Button size="sm" className="w-1/3">{`</>`}</Button>
-              <Button
-                size="sm"
-                className="w-2/3"
-                onClick={() => handlePreviewClick("https://inkspireai.com")}
-              >
-                Preview
-              </Button>
-            </div>
-          </li>
-        </ul>
-      </div> */}
     </main>
   );
 }

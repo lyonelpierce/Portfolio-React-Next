@@ -1,4 +1,4 @@
-import create from "zustand";
+import { create } from "zustand";
 
 type GlobalState = {
   previewLink: string;
@@ -6,7 +6,7 @@ type GlobalState = {
 };
 
 const useGlobalStore = create<GlobalState>((set) => ({
-  previewLink: "",
+  previewLink: "https://pawsome.up.railway.app/",
   setPreviewLink: (link) => set({ previewLink: link }),
 }));
 

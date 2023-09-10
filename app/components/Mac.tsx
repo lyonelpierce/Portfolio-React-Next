@@ -4,12 +4,27 @@ Command: npx gltfjsx@6.2.13 public/mac.glb -t
 */
 
 import * as THREE from "three";
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useFrame, GroupProps } from "@react-three/fiber";
 
 import { useGLTF, Html } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
+
 import useGlobalStore from "@/hooks/useGlobalStore";
+
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+
+import React from "@/public/icons/React";
+import SpringBoot from "@/public/icons/SpringBoot";
+import Next from "@/public/icons/Next";
+import Postgres from "@/public/icons/Postgres";
+import Java from "@/public/icons/Java";
+import Javascript from "@/public/icons/Javascript";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -41,7 +56,6 @@ export function Mac(props: JSX.IntrinsicElements["group"]) {
   const group = useRef<THREE.Group>(null);
   const previewLink = useGlobalStore((state) => state.previewLink);
 
-  console.log("previewLink", previewLink);
   useFrame((state) => {
     const t = state.clock.getElapsedTime();
     if (group.current) {
@@ -85,11 +99,11 @@ export function Mac(props: JSX.IntrinsicElements["group"]) {
               className="htmlScreen"
               distanceFactor={2.5}
               rotation-x={-Math.PI / 2}
-              position={[-0.17, 0.039, -0.17]}
+              position={[0, 0.039, -0.17]}
               transform
               occlude
             >
-              <iframe src="https://pawsome.up.railway.app/" />
+              <iframe src={previewLink} />
             </Html>
           </mesh>
         </group>
@@ -114,6 +128,72 @@ export function Mac(props: JSX.IntrinsicElements["group"]) {
         material={materials.touchbar}
         position={[0, -0.027, 1.201]}
       />
+      <Html
+        scale={1}
+        rotation={[0, 0, 0]}
+        position={[2, 7.2, 0]}
+        transform
+        occlude
+      >
+        <div className="bg-[#303030] rounded-full p-2 cursor-pointer  ">
+          <Javascript width={25} height={25} />
+        </div>
+      </Html>
+      <Html
+        scale={1}
+        rotation={[0, 0, 0]}
+        position={[-2, 7, 0]}
+        transform
+        occlude
+      >
+        <div className="bg-[#303030] rounded-full p-2 cursor-pointer  ">
+          <React width={25} height={25} />
+        </div>
+      </Html>
+      <Html
+        scale={1}
+        rotation={[0, 0, 0]}
+        position={[6, 5, 0]}
+        transform
+        occlude
+      >
+        <div className="bg-[#303030] rounded-full p-2 cursor-pointer  ">
+          <SpringBoot width={25} height={25} />
+        </div>
+      </Html>
+      <Html
+        scale={1}
+        rotation={[0, 0, 0]}
+        position={[-6, 4, 0]}
+        transform
+        occlude
+      >
+        <div className="bg-[#303030] rounded-full p-2 cursor-pointer  ">
+          <Next width={25} height={25} fill={"#fff"} />
+        </div>
+      </Html>
+      <Html
+        scale={1}
+        rotation={[0, 0, 0]}
+        position={[5.3, 2.2, 0]}
+        transform
+        occlude
+      >
+        <div className="bg-[#303030] rounded-full p-2 cursor-pointer  ">
+          <Postgres width={25} height={25} />
+        </div>
+      </Html>
+      <Html
+        scale={1}
+        rotation={[0, 0, 0]}
+        position={[-5.2, 1, 0]}
+        transform
+        occlude
+      >
+        <div className="bg-[#303030] rounded-full p-2 cursor-pointer  ">
+          <Java width={25} height={25} />
+        </div>
+      </Html>
     </group>
   );
 }
