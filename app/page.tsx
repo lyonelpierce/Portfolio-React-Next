@@ -33,7 +33,9 @@ import Laravel from "@/public/icons/Laravel";
 import Three from "@/public/icons/Three.js";
 import Django from "@/public/icons/Django";
 import SpringBoot from "@/public/icons/SpringBoot";
-import { FaGithubAlt, FaExternalLinkAlt, FaPlay } from "react-icons/fa";
+import { FaGithubAlt, FaExternalLinkAlt } from "react-icons/fa";
+
+import { Badge } from "@/components/ui/badge";
 
 export default function Home() {
   const setPreviewLink = useGlobalStore((state) => state.setPreviewLink);
@@ -44,6 +46,7 @@ export default function Home() {
 
   return (
     <main className="flex flex-col min-h-screen max-w-7xl items-center mx-auto justify-center md:justify-between">
+      {/* /HERO------------------------------------------------------------/ */}
       <div className="flex flex-col flex-col-reverse md:flex-row items-center h-screen justify-center">
         <div className="flex flex-col gap-5 md:w-1/3">
           <h1 className="md:text-left text-center font-bold text-3xl md:text-5xl whitespace-nowrap">
@@ -52,9 +55,12 @@ export default function Home() {
           <span className="text-center font-medium md:whitespace-nowrap">
             Full Stack Developer | Web Designer | Graphic Designer
           </span>
-          <button className="md:mx-0 mx-auto border border-orange-600 text-orange-600 hover:text-[#1f1f1f] hover:bg-orange-600 rounded-lg uppercase font-bold p-3 w-1/2">
+          <Button
+            variant="outline"
+            className="mx-auto md:mx-0 w-1/2 uppercase font-bold text-base py-6 text-[#f66e4c] hover:text-[#303030]"
+          >
             Get in touch
-          </button>
+          </Button>
         </div>
         <div className="flex justify-center md:w-2/3 w-full relative">
           <img
@@ -88,7 +94,7 @@ export default function Home() {
                 className="bg-white text-black rounded-full p-2"
               />
               <div className="text-center">
-                <p className="text-3xl font-semibold text-orange-600">5+</p>
+                <p className="text-3xl font-semibold text-[#f66e4c]">5+</p>
                 <span className="font-semibold">Years of Experience</span>
               </div>
               <FiChevronRight size={20} />
@@ -101,10 +107,10 @@ export default function Home() {
             >
               <PiProjectorScreenChart
                 size={60}
-                className="bg-orange-600 text-white rounded-full p-2"
+                className="bg-[#f66e4c] text-white rounded-full p-2"
               />
               <div className="text-center">
-                <p className="text-3xl font-semibold text-orange-600">30+</p>
+                <p className="text-3xl font-semibold text-[#f66e4c]">30+</p>
                 <span className="font-semibold">Completed Projects</span>
               </div>
               <FiChevronRight size={20} />
@@ -120,7 +126,7 @@ export default function Home() {
                 className="bg-[#1f1f1f] text-white rounded-full p-2"
               />
               <div className="text-center">
-                <p className="text-3xl font-semibold text-orange-600">15+</p>
+                <p className="text-3xl font-semibold text-[#f66e4c]">15+</p>
                 <span className="font-semibold">Happy Clients</span>
               </div>
               <FiChevronRight size={20} />
@@ -171,16 +177,19 @@ export default function Home() {
               management.
             </p>
             <div className="flex gap-5 md:flex-row flex-col mt-8">
-              <button className="bg-orange-600 p-3 px-5 rounded-lg font-bold uppercase text-white hover:bg-white hover:text-orange-600">
+              <Button className="bg-[#f66e4c] text-base py-6 px-5 rounded-lg font-bold uppercase text-white hover:bg-white hover:text-orange-600">
                 Hire Me
-              </button>
+              </Button>
               <Link
                 href="https://lyonelpierce.com/assets/RESUME.pdf"
                 target="_blank"
               >
-                <button className="border w-full border-white bg-[#1f1f1f] p-3 px-10 rounded-lg font-bold uppercase text-white hover:bg-white hover:text-[#1f1f1f]">
+                <Button
+                  className="w-full py-6 text-base uppercase font-bold border-0 ring-1 ring-white ring-inset hover:bg-white hover:text-[#303030]"
+                  variant="outline"
+                >
                   Download Resume
-                </button>
+                </Button>
               </Link>
             </div>
           </div>
@@ -282,6 +291,13 @@ export default function Home() {
         id="portfolio"
         className="flex md:flex-col justify-between items-center w-full relative"
       >
+        <div className="about-item text-center ">
+          <p className="uppercase font-semibold text-lg">My Works</p>
+          <h2 className="text-3xl font-bold capitalize">See my work which</h2>
+          <h2 className="text-3xl font-bold mb-6 capitalize">
+            will amaze you!
+          </h2>
+        </div>
         {/* Canvas */}
         <div className="md:w-full relative">
           <img src="/blob.svg" className="w-full h-full -z-10" alt="Hero" />
@@ -295,11 +311,11 @@ export default function Home() {
         {/* Image container */}
         <div className="flex gap-4 absolute bottom-10 mx-auto">
           <div
-            className="bg-[#303030] rounded-md shadow-2xl p-2 cursor-pointer"
-            onClick={() => handlePreviewClick("https://lyonelpierce.com")}
+            className="bg-[#303030] rounded-md shadow-2xl p-2 cursor-pointer hover:ring-2 hover:ring-[#f66e4c]"
+            onClick={() => handlePreviewClick("https://lyonelpierce.com/")}
           >
             <Image
-              src="/gallery/Inkspire.webp"
+              src="/gallery/portfolio.gif"
               alt="Inkspire"
               width={160}
               height={70}
@@ -314,13 +330,13 @@ export default function Home() {
                 href="https://github.com/lyonelpierce/Portfolio-React-Next"
                 target="_blank"
               >
-                <FaGithubAlt className="hover:text-orange-600" />
+                <FaGithubAlt className="hover:text-[#f66e4c]" />
               </Link>
             </div>
           </div>
           <div
-            className="bg-[#303030] rounded-md shadow-2xl p-2 cursor-pointer"
-            onClick={() => handlePreviewClick("https://inkspireai.com")}
+            className="bg-[#303030] rounded-md shadow-2xl p-2 cursor-pointer hover:ring-2 hover:ring-[#f66e4c]"
+            onClick={() => handlePreviewClick("https://inkspireai.com/")}
           >
             <Image
               src="/gallery/Inkspire.webp"
@@ -338,17 +354,20 @@ export default function Home() {
                 href="https://github.com/lyonelpierce/Inkspire"
                 target="_blank"
               >
-                <FaGithubAlt className="hover:text-orange-600" />
+                <FaGithubAlt className="hover:text-[#f66e4c]" />
               </Link>
               <Link href="https://inkspireai.com" target="_blank">
-                <FaExternalLinkAlt className="hover:text-orange-600" />
+                <FaExternalLinkAlt className="hover:text-[#f66e4c]" />
               </Link>
             </div>
           </div>
           <div
-            className="bg-[#303030] rounded-md shadow-2xl p-2 cursor-pointer"
+            className="bg-[#303030] rounded-md shadow-2xl p-2 cursor-pointer relative hover:ring-2 hover:ring-[#f66e4c]"
             onClick={() => handlePreviewClick("https://loremachine.world/")}
           >
+            <Badge className="-mt-4 absolute left-1/2 transform -translate-x-1/2">
+              Contract
+            </Badge>
             <Image
               src="/gallery/Inkspire.webp"
               alt="Inkspire"
@@ -362,18 +381,18 @@ export default function Home() {
             </div>
             <div className="flex justify-around my-1">
               <Link href="https://loremachine.world/" target="_blank">
-                <FaExternalLinkAlt className="hover:text-orange-600" />
+                <FaExternalLinkAlt className="hover:text-[#f66e4c]" />
               </Link>
             </div>
           </div>
           <div
-            className="bg-[#303030] rounded-md shadow-2xl p-2 cursor-pointer"
+            className="bg-[#303030] rounded-md shadow-2xl p-2 cursor-pointer hover:ring-2 hover:ring-[#f66e4c]"
             onClick={() =>
               handlePreviewClick("https://pawsome.up.railway.app/")
             }
           >
             <Image
-              src="/gallery/Inkspire.webp"
+              src="/gallery/pawsome.webp"
               alt="Inkspire"
               width={160}
               height={70}
@@ -388,21 +407,21 @@ export default function Home() {
                 href="https://github.com/lyonelpierce/PetAdoptionCenter"
                 target="_blank"
               >
-                <FaGithubAlt className="hover:text-orange-600" />
+                <FaGithubAlt className="hover:text-[#f66e4c]" />
               </Link>
               <Link href="https://pawsome.up.railway.app/" target="_blank">
-                <FaExternalLinkAlt className="hover:text-orange-600" />
+                <FaExternalLinkAlt className="hover:text-[#f66e4c]" />
               </Link>
             </div>
           </div>
           <div
-            className="bg-[#303030] rounded-md shadow-2xl p-2 cursor-pointer"
+            className="bg-[#303030] rounded-md shadow-2xl p-2 cursor-pointer hover:ring-2 hover:ring-[#f66e4c]"
             onClick={() =>
               handlePreviewClick("https://ring-customizer.up.railway.app/")
             }
           >
             <Image
-              src="/gallery/Inkspire.webp"
+              src="/gallery/ring.gif"
               alt="Inkspire"
               width={160}
               height={70}
@@ -417,13 +436,13 @@ export default function Home() {
                 href="https://github.com/lyonelpierce/Ring-Customizer"
                 target="_blank"
               >
-                <FaGithubAlt className="hover:text-orange-600" />
+                <FaGithubAlt className="hover:text-[#f66e4c]" />
               </Link>
               <Link
                 href="https://ring-customizer.up.railway.app/"
                 target="_blank"
               >
-                <FaExternalLinkAlt className="hover:text-orange-600" />
+                <FaExternalLinkAlt className="hover:text-[#f66e4c]" />
               </Link>
             </div>
           </div>

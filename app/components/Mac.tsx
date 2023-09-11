@@ -25,6 +25,11 @@ import Next from "@/public/icons/Next";
 import Postgres from "@/public/icons/Postgres";
 import Java from "@/public/icons/Java";
 import Javascript from "@/public/icons/Javascript";
+import Typescript from "@/public/icons/Typescript";
+import Three from "@/public/icons/Three.js";
+import MySql from "@/public/icons/MySql";
+import Tailwind from "@/public/icons/Tailwind";
+import Vite from "@/public/icons/Vite";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -55,6 +60,8 @@ export function Mac(props: JSX.IntrinsicElements["group"]) {
   const { nodes, materials } = useGLTF("/mac.glb") as GLTFResult;
   const group = useRef<THREE.Group>(null);
   const previewLink = useGlobalStore((state) => state.previewLink);
+
+  console.log(previewLink);
 
   useFrame((state) => {
     const t = state.clock.getElapsedTime();
@@ -135,7 +142,7 @@ export function Mac(props: JSX.IntrinsicElements["group"]) {
         transform
         occlude
       >
-        <div className="bg-[#303030] rounded-full p-2 cursor-pointer  ">
+        <div className="bg-[#303030] rounded-full p-2 cursor-pointer">
           <Javascript width={25} height={25} />
         </div>
       </Html>
@@ -146,7 +153,7 @@ export function Mac(props: JSX.IntrinsicElements["group"]) {
         transform
         occlude
       >
-        <div className="bg-[#303030] rounded-full p-2 cursor-pointer  ">
+        <div className="bg-[#303030] rounded-full p-2 cursor-pointer">
           <React width={25} height={25} />
         </div>
       </Html>
@@ -157,9 +164,39 @@ export function Mac(props: JSX.IntrinsicElements["group"]) {
         transform
         occlude
       >
-        <div className="bg-[#303030] rounded-full p-2 cursor-pointer  ">
-          <SpringBoot width={25} height={25} />
-        </div>
+        {previewLink === "https://pawsome.up.railway.app/" && (
+          <div className="bg-[#303030] rounded-full p-2 cursor-pointer">
+            <SpringBoot width={25} height={25} />
+          </div>
+        )}
+      </Html>
+      <Html
+        scale={1}
+        rotation={[0, 0, 0]}
+        position={[6, 5, 0]}
+        transform
+        occlude
+      >
+        {previewLink === "https://ring-customizer.up.railway.app/" && (
+          <div className="bg-[#303030] rounded-full p-2 cursor-pointer">
+            <Vite width={25} height={25} />
+          </div>
+        )}
+      </Html>
+      <Html
+        scale={1}
+        rotation={[0, 0, 0]}
+        position={[6, 5, 0]}
+        transform
+        occlude
+      >
+        {(previewLink === "https://lyonelpierce.com/" ||
+          previewLink === "https://inkspireai.com/" ||
+          previewLink === "https://loremachine.world/") && (
+          <div className="bg-[#303030] rounded-full p-2 cursor-pointer">
+            <Tailwind width={25} height={25} />
+          </div>
+        )}
       </Html>
       <Html
         scale={1}
@@ -168,7 +205,7 @@ export function Mac(props: JSX.IntrinsicElements["group"]) {
         transform
         occlude
       >
-        <div className="bg-[#303030] rounded-full p-2 cursor-pointer  ">
+        <div className="bg-[#303030] rounded-full p-2 cursor-pointer">
           <Next width={25} height={25} fill={"#fff"} />
         </div>
       </Html>
@@ -179,9 +216,39 @@ export function Mac(props: JSX.IntrinsicElements["group"]) {
         transform
         occlude
       >
-        <div className="bg-[#303030] rounded-full p-2 cursor-pointer  ">
-          <Postgres width={25} height={25} />
-        </div>
+        {previewLink === "https://pawsome.up.railway.app/" && (
+          <div className="bg-[#303030] rounded-full p-2 cursor-pointer">
+            <Postgres width={25} height={25} />
+          </div>
+        )}
+      </Html>
+      <Html
+        scale={1}
+        rotation={[0, 0, 0]}
+        position={[5.3, 2.2, 0]}
+        transform
+        occlude
+      >
+        {previewLink === "https://inkspireai.com/" && (
+          <div className="bg-[#303030] rounded-full p-2 cursor-pointer">
+            <MySql width={25} height={25} />
+          </div>
+        )}
+      </Html>
+      <Html
+        scale={1}
+        rotation={[0, 0, 0]}
+        position={[5.3, 2.2, 0]}
+        transform
+        occlude
+      >
+        {(previewLink === "https://lyonelpierce.com/" ||
+          previewLink === "https://ring-customizer.up.railway.app/" ||
+          previewLink === "https://loremachine.world/") && (
+          <div className="bg-[#303030] rounded-full p-2 cursor-pointer">
+            <Three width={25} height={25} stroke={"#fff"} />
+          </div>
+        )}
       </Html>
       <Html
         scale={1}
@@ -190,9 +257,26 @@ export function Mac(props: JSX.IntrinsicElements["group"]) {
         transform
         occlude
       >
-        <div className="bg-[#303030] rounded-full p-2 cursor-pointer  ">
-          <Java width={25} height={25} />
-        </div>
+        {previewLink === "https://pawsome.up.railway.app/" && (
+          <div className="bg-[#303030] rounded-full p-2 cursor-pointer">
+            <Java width={25} height={25} />
+          </div>
+        )}
+      </Html>
+      <Html
+        scale={1}
+        rotation={[0, 0, 0]}
+        position={[-5.2, 1, 0]}
+        transform
+        occlude
+      >
+        {(previewLink === "https://lyonelpierce.com/" ||
+          previewLink === "https://loremachine.world/" ||
+          previewLink === "https://inkspireai.com/") && (
+          <div className="bg-[#303030] rounded-full p-2 cursor-pointer">
+            <Typescript width={25} height={25} />
+          </div>
+        )}
       </Html>
     </group>
   );
