@@ -33,9 +33,21 @@ import Laravel from "@/public/icons/Laravel";
 import Three from "@/public/icons/Three.js";
 import Django from "@/public/icons/Django";
 import SpringBoot from "@/public/icons/SpringBoot";
-import { FaGithubAlt, FaExternalLinkAlt } from "react-icons/fa";
+import Postgres from "@/public/icons/Postgres";
+import MySql from "@/public/icons/MySql";
+import Mongo from "@/public/icons/Mongo";
+import Docker from "@/public/icons/Docker";
+import Tailwind from "@/public/icons/Tailwind";
+import Bootstrap from "@/public/icons/Bootstrap";
+import Vercel from "@/public/icons/Vercel";
 
+import { FaGithubAlt, FaExternalLinkAlt } from "react-icons/fa";
 import { Badge } from "@/components/ui/badge";
+import Aws from "@/public/icons/Aws";
+import Git from "@/public/icons/Git";
+import Github from "@/public/icons/Github";
+import Shadcn from "@/public/icons/Shadcn";
+import Wordpress from "@/public/icons/Wordpress";
 
 export default function Home() {
   const setPreviewLink = useGlobalStore((state) => state.setPreviewLink);
@@ -138,7 +150,7 @@ export default function Home() {
       {/* /ABOUT ------------------------------------------------------------/ */}
       <div
         id="about"
-        className="flex md:flex-row flex-col justify-between items-center gap-32"
+        className="flex md:flex-row flex-col justify-between items-center gap-32 my-20"
       >
         <div className="md:w-1/2 w-full relative">
           <img src="/blob.svg" className="w-full h-full -z-10" alt="Hero" />
@@ -199,7 +211,7 @@ export default function Home() {
       {/* /SKILLS ------------------------------------------------------------/ */}
       <div
         id="skills"
-        className="flex md:flex-row flex-col justify-between items-center my-48"
+        className="flex md:flex-row flex-col justify-between items-center my-20"
       >
         <Tabs defaultValue="skills" className="md:flex gap-32">
           <div className="md:w-1/2 w-full flex flex-col md:flex-row md:gap-8">
@@ -284,15 +296,95 @@ export default function Home() {
                 </li>
               </ul>
             </TabsContent>
-            <TabsContent value="tools">Change your password here.</TabsContent>
+            <TabsContent
+              value="tools"
+              className="flex items-center justify-center"
+            >
+              <ul className="grid grid-rows-3 grid-cols-4 md:grid-rows-2 md:grid-cols-6 gap-4 my-12 justify-center">
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <li className="bg-[#303030] rounded-md w-fit p-4 shadow-2xl cursor-help">
+                        <Postgres width={50} height={50} />
+                      </li>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Javascript</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+
+                <li className="bg-[#303030] rounded-md w-fit p-4 shadow-2xl cursor-help">
+                  <MySql width={50} height={50} />
+                </li>
+                <li className="bg-[#303030] rounded-md w-fit p-4 shadow-2xl cursor-help">
+                  <Mongo width={50} height={50} />
+                </li>
+                <li className="bg-[#303030] rounded-md w-fit p-4 shadow-2xl cursor-help">
+                  <Tailwind width={50} height={50} />
+                </li>
+                <li className="bg-[#303030] rounded-md w-fit p-4 shadow-2xl cursor-help">
+                  <Bootstrap width={50} height={50} />
+                </li>
+                <li className="bg-[#303030] rounded-md w-fit p-4 shadow-2xl cursor-help">
+                  <Shadcn width={50} height={50} />
+                </li>
+                <li className="bg-[#303030] rounded-md w-fit p-4 shadow-2xl cursor-help">
+                  <Docker width={50} height={50} />
+                </li>
+                <li className="bg-[#303030] rounded-md w-fit p-4 shadow-2xl cursor-help">
+                  <Vercel width={50} height={50} fill={"#fff"} />
+                </li>
+                <li className="bg-[#303030] rounded-md w-fit p-4 shadow-2xl cursor-help">
+                  <Aws width={50} height={50} fill={"#fff"} />
+                </li>
+                <li className="bg-[#303030] rounded-md w-fit p-4 shadow-2xl cursor-help">
+                  <Git width={50} height={50} />
+                </li>
+                <li className="bg-[#303030] rounded-md w-fit p-4 shadow-2xl cursor-help">
+                  <Github width={50} height={50} fill={"#fff"} />
+                </li>
+                <li className="bg-[#303030] rounded-md w-fit p-4 shadow-2xl cursor-help">
+                  <Wordpress width={50} height={50} />
+                </li>
+              </ul>
+            </TabsContent>
           </div>
         </Tabs>
+      </div>
+
+      {/* /EXPERIENCE ------------------------------------------------------------/ */}
+      <div
+        id="experience"
+        className="flex md:flex-row flex-col justify-between items-center gap-32 my-20"
+      >
+        <div className="md:w-1/2 w-full relative"></div>
+        <div className="md:w-1/2 w-full flex flex-col md:flex-row md:gap-8">
+          <div className="">
+            <div className="uppercase text-lg whitespace-nowrap font-semibold md:-rotate-90 md:flex flex-col md:flex-row-reverse items-center w-2.5">
+              Experience
+              <div className="md:absolute md:left-1/2 mx-8 md:mx-0 md:-ml-36 w-0.5 h-12 bg-white -rotate-90 mt-[-1.8rem] md:mt-0"></div>
+            </div>
+          </div>
+          <div className="flex flex-col">
+            <div className="about-item">
+              <h2 className="text-3xl font-bold mb-6">
+                5+ Years of Experience
+              </h2>
+            </div>
+            <p className="text-base text-white leading-relaxed leading-loose text-md">
+              I have been developing web applications and designing graphics,
+              for 5 years and I know for sure the main trends and directions of
+              modern technologies and design trends.
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* /PORTFOLIO ------------------------------------------------------------/ */}
       <div
         id="portfolio"
-        className="flex md:flex-col justify-between items-center w-full relative"
+        className="flex md:flex-col justify-between items-center w-full relative my-20"
       >
         <div className="about-item text-center ">
           <p className="uppercase font-semibold text-lg">My Works</p>
@@ -314,7 +406,7 @@ export default function Home() {
         {/* Image container */}
         <div className="flex gap-4 absolute bottom-10 mx-auto">
           <div
-            className="bg-[#303030] rounded-md shadow-2xl p-2 cursor-pointer hover:ring-2 hover:ring-[#f66e4c]"
+            className="bg-[#303030] rounded-md shadow-2xl p-2 cursor-pointer hover:ring-2 hover:ring-[#f66e4c] hover:scale-110"
             onClick={() => handlePreviewClick("https://lyonelpierce.com/")}
           >
             <Image
@@ -338,7 +430,7 @@ export default function Home() {
             </div>
           </div>
           <div
-            className="bg-[#303030] rounded-md shadow-2xl p-2 cursor-pointer hover:ring-2 hover:ring-[#f66e4c]"
+            className="bg-[#303030] rounded-md shadow-2xl p-2 cursor-pointer hover:ring-2 hover:ring-[#f66e4c] hover:scale-110"
             onClick={() => handlePreviewClick("https://inkspireai.com/")}
           >
             <Image
@@ -365,7 +457,7 @@ export default function Home() {
             </div>
           </div>
           <div
-            className="bg-[#303030] rounded-md shadow-2xl p-2 cursor-pointer relative hover:ring-2 hover:ring-[#f66e4c]"
+            className="bg-[#303030] rounded-md shadow-2xl p-2 cursor-pointer relative hover:ring-2 hover:ring-[#f66e4c] hover:scale-110"
             onClick={() => handlePreviewClick("https://loremachine.world/")}
           >
             <Badge className="-mt-4 absolute left-1/2 transform -translate-x-1/2">
@@ -389,7 +481,7 @@ export default function Home() {
             </div>
           </div>
           <div
-            className="bg-[#303030] rounded-md shadow-2xl p-2 cursor-pointer hover:ring-2 hover:ring-[#f66e4c]"
+            className="bg-[#303030] rounded-md shadow-2xl p-2 cursor-pointer hover:ring-2 hover:ring-[#f66e4c] hover:scale-110"
             onClick={() =>
               handlePreviewClick("https://pawsome.up.railway.app/")
             }
@@ -418,7 +510,7 @@ export default function Home() {
             </div>
           </div>
           <div
-            className="bg-[#303030] rounded-md shadow-2xl p-2 cursor-pointer hover:ring-2 hover:ring-[#f66e4c]"
+            className="bg-[#303030] rounded-md shadow-2xl p-2 cursor-pointer hover:ring-2 hover:ring-[#f66e4c] hover:scale-110"
             onClick={() =>
               handlePreviewClick("https://ring-customizer.up.railway.app/")
             }
