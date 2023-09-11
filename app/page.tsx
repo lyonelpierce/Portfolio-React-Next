@@ -230,13 +230,16 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="flex items-center md:w-1/2 w-full">
-            <TabsContent value="skills">
-              <ul className="grid grid-rows-2 grid-cols-6 gap-4">
+          <div className="flex items-center justify-center md:w-1/2 w-full">
+            <TabsContent
+              value="skills"
+              className="flex items-center justify-center"
+            >
+              <ul className="grid grid-rows-3 grid-cols-4 md:grid-rows-2 md:grid-cols-6 gap-4 my-12 justify-center">
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger>
-                      <li className="bg-[#303030] rounded-md w-fit p-5 shadow-2xl cursor-help">
+                      <li className="bg-[#303030] rounded-md w-fit p-4 shadow-2xl cursor-help">
                         <Javascript width={50} height={50} />
                       </li>
                     </TooltipTrigger>
@@ -246,37 +249,37 @@ export default function Home() {
                   </Tooltip>
                 </TooltipProvider>
 
-                <li className="bg-[#303030] rounded-md w-fit p-5 shadow-2xl cursor-help">
+                <li className="bg-[#303030] rounded-md w-fit p-4 shadow-2xl cursor-help">
                   <Php width={50} height={50} />
                 </li>
-                <li className="bg-[#303030] rounded-md w-fit p-5 shadow-2xl cursor-help">
+                <li className="bg-[#303030] rounded-md w-fit p-4 shadow-2xl cursor-help">
                   <Python width={50} height={50} />
                 </li>
-                <li className="bg-[#303030] rounded-md w-fit p-5 shadow-2xl cursor-help">
+                <li className="bg-[#303030] rounded-md w-fit p-4 shadow-2xl cursor-help">
                   <Java width={50} height={50} />
                 </li>
-                <li className="bg-[#303030] rounded-md w-fit p-5 shadow-2xl cursor-help">
+                <li className="bg-[#303030] rounded-md w-fit p-4 shadow-2xl cursor-help">
                   <Typescript width={50} height={50} />
                 </li>
-                <li className="bg-[#303030] rounded-md w-fit p-5 shadow-2xl cursor-help">
+                <li className="bg-[#303030] rounded-md w-fit p-4 shadow-2xl cursor-help">
                   <React width={50} height={50} />
                 </li>
-                <li className="bg-[#303030] rounded-md w-fit p-5 shadow-2xl cursor-help">
+                <li className="bg-[#303030] rounded-md w-fit p-4 shadow-2xl cursor-help">
                   <Next width={50} height={50} fill={"#fff"} />
                 </li>
-                <li className="bg-[#303030] rounded-md w-fit p-5 shadow-2xl cursor-help">
+                <li className="bg-[#303030] rounded-md w-fit p-4 shadow-2xl cursor-help">
                   <Vue width={50} height={50} />
                 </li>
-                <li className="bg-[#303030] rounded-md w-fit p-5 shadow-2xl cursor-help">
+                <li className="bg-[#303030] rounded-md w-fit p-4 shadow-2xl cursor-help">
                   <Laravel width={50} height={50} />
                 </li>
-                <li className="bg-[#303030] rounded-md w-fit p-5 shadow-2xl cursor-help">
+                <li className="bg-[#303030] rounded-md w-fit p-4 shadow-2xl cursor-help">
                   <Three width={50} height={50} stroke={"#fff"} />
                 </li>
-                <li className="bg-[#303030] rounded-md w-fit p-5 shadow-2xl cursor-help">
+                <li className="bg-[#303030] rounded-md w-fit p-4 shadow-2xl cursor-help">
                   <Django width={50} height={50} />
                 </li>
-                <li className="bg-[#303030] rounded-md w-fit p-5 shadow-2xl cursor-help">
+                <li className="bg-[#303030] rounded-md w-fit p-4 shadow-2xl cursor-help">
                   <SpringBoot width={50} height={50} />
                 </li>
               </ul>
