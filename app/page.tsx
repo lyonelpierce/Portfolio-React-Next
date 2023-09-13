@@ -516,7 +516,7 @@ export default function Home() {
             }
           >
             <Image
-              src="/gallery/ring.gif"
+              src="/gallery/Inkspire.webp"
               alt="Inkspire"
               width={160}
               height={70}
